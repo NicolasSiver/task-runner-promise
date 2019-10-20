@@ -23,5 +23,15 @@
   "bugs": {
     "url": "https://github.com/NicolasSiver/task-runner-promise/issues"
   },
-  "homepage": "https://github.com/NicolasSiver/task-runner-promise#readme"
+  "homepage": "https://github.com/NicolasSiver/task-runner-promise#readme",
+  "dependencies": {
+    "bluebird": "^3.7.1",
+    "eventemitter3": "^4.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^6.2.2",
+    "sinon": "^7.5.0"
+  }
 }
