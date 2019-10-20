@@ -1,0 +1,27 @@
+{
+  "name": "task-runner-promise",
+  "version": "1.0.0",
+  "description": "Task Runner as a service implemented with Promises.",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolasSiver/task-runner-promise.git"
+  },
+  "keywords": [
+    "task",
+    "run",
+    "runner",
+    "queue",
+    "fifo",
+    "promise"
+  ],
+  "author": "Nicolas Siver",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NicolasSiver/task-runner-promise/issues"
+  },
+  "homepage": "https://github.com/NicolasSiver/task-runner-promise#readme"
+}
