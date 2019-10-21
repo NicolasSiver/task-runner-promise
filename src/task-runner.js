@@ -20,6 +20,7 @@ class TaskRunner {
         return Promise
             .resolve()
             .then(() => this.currentTask.run())
+            .catchReturn()
             .finally(() => {
                 this.currentTask = null;
                 return this.invalidate();
@@ -38,7 +39,7 @@ class TaskRunner {
 
     start() {
         this.running = true;
-        this.invalidate();
+        return this.invalidate();
     }
 
     /**
