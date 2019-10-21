@@ -1,6 +1,6 @@
 {
   "name": "task-runner-promise",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Task Runner as a service implemented with Promises.",
   "main": "./src/index.js",
   "scripts": {
