@@ -38,7 +38,7 @@ class TaskRunner {
 
     start() {
         this.running = true;
-        this.invalidate();
+        return this.invalidate();
     }
 
     /**
