@@ -60,7 +60,7 @@ The routine could be any function with synchronous code or Promise.
 
 Parameters:
 
-- `routine`, function which encapsulates execution body for the task
+- `routine {Function}`, function which encapsulates execution body for the task
 
 Returns:
 
@@ -80,10 +80,52 @@ The result of the routine is not captured by design.
 
 ### `TaskRunner`
 
+Task Runner is where orchestration of the tasks happens.
+Task Runner designed in a way that could be used as a service.
+It's possible to create an instance and have it in memory, just `start()` the service and add new tasks as they arrive.
+Task Runner will make sure that tasks are executed in a sequence.
+The design also allows to do tasks in batches, you can add multiple tasks and `start()` service and wait when the result of the `start` operation is resolved.
+
+Example for batching:
+
+```javascript
+// Tasks: Task 1, Task 2, ..., Task N
+tasks.forEach(task => runner.add(task));
+
+runner.start().then(() => console.log('Finished all tasks'));
+
+// Output:
+// Finished all tasks
+``` 
+
 #### `add(task)`
+
+Parameters:
+
+- `task {Task}`, instance of the task
+
+Adds task to the queue.
 
 #### `isRunning()`
 
+Returns:
+
+- `{Boolean}`, status if Task Runner is active
+
+Check if Task Runner is active. 
+Task Runner processes tasks only if it's in an active state.
+
 #### `start()`
 
+Returns:
+
+- `{Promise}`, promise chain for the current queue
+
+Starts processing for the tasks in the queue.
+Task Runner awaits for new tasks.
+Task Runner processes one task at a time.
+
 #### `stop()`
+
+Stops Task Runner.
+Any task which is already running will finish disregarding the fact that runner was stopped.
